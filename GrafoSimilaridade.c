@@ -23,11 +23,11 @@ int main(){
 	printWords(lista3, cont3, 3);
 	
 	
-	//Aloca as matrizes de adjacência para que seja feita a comparação dos grafos;
+	//Aloca os grafos;
 	Grafo* g1 = alocaGrafo(cont3);
 	Grafo* g2 = alocaGrafo(cont3);
 	
-	//Zera as matrizes
+	//Zera as matrizes de adjacencia dos grafos
 	for (int i = 0; i < cont3; ++i){
 		for (int j = 0; j < cont3; ++j){
 			g1->mat[i][j] = 0;
@@ -35,9 +35,7 @@ int main(){
 		}
 	}
 
-	//Armazenam as conexões entre palavras nas matrizes de adjacência
-	//A matriz 1 representa as arestas do grafo formado pelo texto contido no vetor lista 1
-	//A matriz 2 representa as arestas do grafo formado pelo texto contido no vetor lista 2
+	//Armazenam as conexões entre palavras nas matrizes de adjacênciados grafos 1 e 2
 	for (int i = 0; i < cont1 - 1; ++i){
 		g1->mat[getWordPosition(lista3,lista1[i]->palavra,cont3)][getWordPosition(lista3,lista1[i+1]->palavra,cont3)] = 1;
 	}
