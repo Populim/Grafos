@@ -122,7 +122,7 @@ void juntaPalavras(Palavra** lista1, Palavra** lista2,Palavra** lista3,int cont1
 	}
 }
 
-//Aloca uma matriz quadrada de inteiros de tamanho 'size';
+//Aloca um grafo com uma matriz de adjacencias;
 Grafo* alocaGrafo(int size){
 	Grafo* g = malloc(sizeof(Grafo));
 	g->mat = malloc(sizeof(int*) * size);
@@ -133,7 +133,7 @@ Grafo* alocaGrafo(int size){
 	return g;	
 }
 
-//Imprime uma matriz quadrada de inteiros de tamanho 'size';
+//Imprime um grafo com uma matriz de adjacencias;
 void printMatrix(Grafo* g){
 
 	for (int i = 0; i < g->tam; ++i){
@@ -145,7 +145,7 @@ void printMatrix(Grafo* g){
 	printf("\n");
 }
 
-//Libera uma matriz quadrada de inteiros de tamanho 'size';
+//Libera um grafo com uma matriz de adjacencias;
 void liberaGrafo(Grafo* g){
 	for (int i = 0; i < g->tam; ++i){
 		free(g->mat[i]);
